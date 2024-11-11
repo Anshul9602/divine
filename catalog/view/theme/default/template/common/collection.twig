@@ -1,0 +1,94 @@
+{{ header }}
+
+<style>
+	.promobox__plate {
+		min-height: 45px;
+		bottom: 10%;
+		left: 25px;
+		right: 25px;
+		background: #bde1d7;
+		color: #222222;
+	}
+
+	.position-absolute {
+		position: absolute !important;
+	}
+
+	.css-theme-loaded .promobox:not(.promobox--is-slider) .promobox__content,
+	.css-theme-loaded .slick-active .promobox__content {
+		transform: none;
+		opacity: 1;
+	}
+
+	.promobox:not(.promobox--is-slider) .promobox__content {
+		transition-duration: 0.5s !important;
+	}
+</style>
+
+
+<script src="
+			https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
+			"></script>
+<link href="
+			https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+			" rel="stylesheet">
+<!-- hero slider area start -->
+
+<!-- hero slider area end -->
+
+
+<!--New arrivals -->
+<section class="slider-area">
+
+	<div class="row"style="margin:0px;">
+		<div class="slider_banner "style="width:100%;">
+			<div class="desktop-slider hero-slider-active slick-arrow-style slick-arrow-style_hero slick-dot-style">
+				{% for banner in banners %}
+				
+					<img src="{{ banner.image }}" alt="" class="img-response slider-img">
+				
+				{% endfor %}
+			</div>
+		</div>
+
+	</div>
+
+</section>
+<section class="new-arrivals" style="min-height:100vh;">
+
+	<div class="container">
+		<div class="row">
+			<div class="col-12 text-center mt-5">
+				
+				<h2>COLLECTIONS</h2>
+
+				<br />
+			</div>
+		</div>
+
+		<div class="row">
+			{% for product in style_categories %}
+
+			<div class="col-sm-4 col-12">
+				<div class="product-card text-center">
+					<a href="{{product.href}}" class="relative">
+						<img src="{{product.thumb}}" alt="" class="img-responsive">
+						<div class="promobox__plate position-absolute pointer-events-none">
+							<div class="promobox__content d-flex flex-column flex-center ">
+								<p class="h5 position-relative  text-uppercase"style="margin: 10px;">{{product.name}}</p>
+								
+							</div>
+						</div>
+					</a>
+
+
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+
+	</div>
+</section>
+
+
+{{ footer }}

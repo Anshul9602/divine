@@ -1,0 +1,74 @@
+<style>
+  .list-group-item{
+    background:transparent;
+    border:none;
+  }
+   @media screen and (max-width:650px) {
+       .filter-panel {
+         position: fixed;
+         background: #fff;
+         width: 260px;
+         left: -260px;
+         height: 100vh;
+         overflow-y: auto;
+         padding: 20px;
+         z-index: 999999999999;
+         top: 0px;
+
+       }
+       .backdrop-filter{
+          position: fixed;
+          top: 0px;
+          left:0px;
+          width:100%;
+          height:100vh;
+          background:rgb(0,0,0,0.5);
+          z-index: 99999999;
+          display:none;
+       }
+   }
+</style>
+<div class="backdrop-filter"></div>
+<div class="panel panel-default filter-panel">
+ 
+  <div class="list-group"> {% for filter_group in filter_groups %} 
+    <h5>{{ filter_group.name }}  </h5>
+   
+    <div class="list-group-item">
+      <div id="filter-group{{ filter_group.filter_group_id }}">{% for filter in filter_group.filter %}
+        <div class="checkbox">
+          <label>{% if filter.filter_id in filter_category %}
+            <input type="checkbox" name="filter[]" value="{{ filter.filter_id }}" checked="checked" />
+            {{ filter.name }}
+            {% else %}
+            <input type="checkbox" name="filter[]" value="{{ filter.filter_id }}" />
+            {{ filter.name }}
+            {% endif %}</label>
+        </div>
+       
+        {% endfor %}
+        <hr class="mt-0"/>
+      </div>
+    </div>
+    {% endfor %}</div>
+  <div class="panel-footer text-center mt-20">
+    <button type="button" style='display:none' id="button-filter" class="btn btn-primary">{{ button_filter }}</button>
+  </div>
+</div>
+<script type="text/javascript"><!--
+$('#button-filter').on('click', function() {
+	filter = [];
+
+	$('input[name^=\'filter\']:checked').each(function(element) {
+		filter.push(this.value);
+	});
+
+	location = '{{ action }}&filter=' + filter.join(',');
+});
+
+$('input[name^=\'filter\']').change(function() {
+    
+       $('#button-filter').click()
+    
+});
+//--></script> 

@@ -1,0 +1,162 @@
+{#
+//==============================================
+// Elfinder Image Manager
+// Author 	: OpenCartBoost
+// Email 	: support@opencartboost.com
+// Website 	: http://www.opencartboost.com
+//==============================================
+#}
+<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">{{ heading_title_mtitle }}</h4>
+	    <!--h5 class="modal-title" style="overflow-wrap:break-word">{{ connector_url }}</h5-->
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div id="elfinder" data-connector-url="{{ connector_url }}">{{ test }}</div>
+        </div>
+	  </div>
+	  <div class="modal-footer">
+		<span class="insert_image_span"></span>
+		<input type="hidden" name="insert_image_input" value="" id="insert_image_input">
+		<button disabled type="button" class="insert_image" data-dismiss="modal" aria-hidden="true" value="" disabled style="color:#a5a5a5;">{{ insert_image }}</button>
+	  </div>
+    </div>
+  </div>
+
+  <!--script src="view/javascript/elfinder/js/elfinder.min.js"></script-->
+  <script src="view/javascript/elfinder/js/extras/editors.default.min.js"></script>
+  <script type="text/javascript" charset="utf-8">
+
+  // Documentation for client options:
+  // https://github.com/Studio-42/elFinder/wiki/Client-configuration-options
+  $(document).ready(function() {
+    var elfinder = $('#elfinder');
+    var elfinderConnectorUrl = elfinder.data('connector-url');
+	
+    elfinder.elfinder({
+      url: elfinderConnectorUrl,
+	  getfile: {multiple: {% if multi %} true {% else %} false {% endif %},},
+	  handlers:{
+		select: function (event, elfinderInstance) {
+			{% if multi %}			
+			  //for multi			
+			  var fileInfo = elfinderInstance.file(event.data.selected);		
+			  var fileUrls = event.data.selected;
+			  var multiselect = [];
+			  $.each(fileUrls, function(index, value){
+				  multiselect.push(elfinderInstance.url(value));
+			  });
+			  $('.insert_image_span').html('');
+			
+			  if (fileUrls.length === 0) {
+			    $('.insert_image_span').html('');
+				$('#insert_image_input').val('');
+				$('button.insert_image').prop('disabled', true);
+				$('button.insert_image').prop('style', 'color:#a5a5a5;');
+			  } else {
+				$.each(multiselect,function(index,value){
+					$('.insert_image_span').append("<span class='badge badge-secondary mr-2'>"+value+"</span>");
+				});				
+				$('#insert_image_input').val(multiselect.join());
+				$('button.insert_image').prop('disabled', false);
+				$('button.insert_image').prop('style', '');
+			  }
+			  console.log(multiselect);
+			
+			{% else %}
+			  //for single
+			  fileInfo = elfinderInstance.file(event.data.selected);
+			  fileUrl = elfinderInstance.url(event.data.selected);
+			  
+			  if (fileInfo && fileInfo.mime != 'directory') {
+				$('.insert_image_span').html("<span class='badge badge-secondary mr-2'>"+fileUrl+"</span>");
+				$('#insert_image_input').val(fileUrl);
+				$('button.insert_image').prop('disabled', false);
+				$('button.insert_image').prop('style', '');
+			  } else {
+				$('.insert_image_span').html('');
+				$('#insert_image_input').val('');
+				$('button.insert_image').prop('disabled', true);
+				$('button.insert_image').prop('style', 'color:#a5a5a5;');
+			  }
+			{% endif %}
+		  }
+	    }
+      });
+    });
+  </script>
+  <!--insert image to target-->
+  <script type="text/javascript"><!--
+  {% if target %}
+    $('.insert_image').on('click', function(e) {
+	  //var img_url = $('.insert_image_span').text();
+	  var img_url = $('#insert_image_input').val();
+	
+	  var target_img_url = img_url.replace(/\.\.\/image\/(.+)$/i,'$1');
+	  //var abs_img_url = "{{ path }}" + img_url;
+
+	  {% if thumb %}
+	    $.ajax({
+		  url:'index.php?route=extension/module/elfinder/thumb&user_token={{user_token}}&img_url='+target_img_url,
+  		  type: 'post',
+		  dataType: 'html',
+		  cache: false,
+		  success: function(thumb_img) {
+			//alert($.parseJSON(thumb));
+			$('#{{ thumb }}').find('img').attr('src', $.parseJSON(thumb_img));
+		  }	
+	    });	
+	  {% endif %}
+	
+	  $('#{{ target }}').val(target_img_url);
+    });
+  {% endif %}
+  
+  {% if multi %}
+    $('.insert_image').on('click', function(e) {
+	  {% if multi == "option" %}
+	    console.log('o');
+	  {% elseif multi == "product" %}
+	    console.log('p');
+	  {% elseif multi == "banner" %}
+	    console.log('b');
+	  {% endif %}
+	
+	  var option_value_row = {{ option_value_row }};
+	  var elfinder_language_id = {{ elfinder_language_id }};
+	  
+	  //alert({{elfinder_language_id}});
+	  //populate the rows with ajax
+	  var img_url = $('#insert_image_input').val();
+	  var img_url_arr = img_url.split(",");	
+	  
+	  jQuery.each(img_url_arr, function(index, value){
+		{% if multi == "option" %}
+		  addOptionValue();
+		{% elseif multi == "product" %}
+		  addImage();
+		{% elseif multi == "banner" %}
+		  addImage(elfinder_language_id);
+		{% endif %}
+		
+		var target_img_url = value.replace(/\.\.\/image\/(.+)$/i,'$1');
+		$.ajax({
+		  url:'index.php?route=extension/module/elfinder/thumb&user_token={{user_token}}&img_url='+target_img_url,
+		  type: 'post',
+		  dataType: 'html',
+		  cache: false,
+		  success: function(thumb_img) {				
+			var selector_img = "#thumb-image"+option_value_row;
+			var selector_inp = "#input-image"+option_value_row;
+			$(selector_img).find('img').attr('src', $.parseJSON(thumb_img));
+			$(selector_inp).val(target_img_url);
+			  option_value_row++;
+		  }	
+		});
+      });
+	});
+  {% endif %}
+</script>

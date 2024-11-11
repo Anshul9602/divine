@@ -1,0 +1,36 @@
+{{ header }}
+<div class="breadcrumb-area hidden-phone">
+   <div class="container">
+      <div class="row">
+         <div class="col-12">
+            <div class="breadcrumb-wrap">
+               <nav aria-label="breadcrumb">
+                  <ul class="breadcrumb">
+                     {% for breadcrumb in breadcrumbs %}
+                     <li class="ml-2"><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+                     &nbsp;/
+                     {% endfor %}
+                  </ul>
+               </nav>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<br />
+<div id="information-information" class="container ">
+ 
+  <div class="row">{{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-sm-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content" class="{{ class }} pb-4" style="min-height:600px;">{{ content_top }}
+      <h1 class="pb-3">{{ heading_title }}</h1>
+      {{ description }}{{ content_bottom }}</div>
+    {{ column_right }}</div>
+</div>
+{{ footer }}

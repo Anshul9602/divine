@@ -1,0 +1,145 @@
+{{ header }}
+
+<style>
+  .ac_menu .col-sm-3 {
+    padding: 20px;
+    margin: 0px;
+    text-align: center;
+  }
+
+  .ac_menu .col-sm-3 .col-sm-12 {
+    border: thin solid #ccc;
+    padding: 10px;
+    height: 228px
+  }
+
+  .col-sm-12 .atag {
+    font-size: 18px;
+    color: #525252
+  }
+
+  .ac_description {
+    margin-top: 12px;
+    font-weight: 300 !important;
+    color: #333
+  }
+</style>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- breadcrumb area start -->
+<div class="breadcrumb-area hidden-phone">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="breadcrumb-wrap">
+					<nav aria-label="breadcrumb">
+						<ul class="breadcrumb">
+							{% for breadcrumb in breadcrumbs %}
+								<li class="ml-2">
+									<a href="{{ breadcrumb.href }}" style="text-transform: uppercase;">{{ breadcrumb.text }}</a>
+								</li>
+								&nbsp;/
+							{% endfor %}
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- breadcrumb area end -->
+
+
+<div style=" width:100%; min-height: 600px;" class="container">
+
+
+
+  <div style="margin:60px 0px" class="row text-center">
+
+    <h1 style="text-align: center; margin: auto;" class="big">My Account</h1>
+
+
+  </div>
+
+
+
+  <div class="row">
+    <div id="content" class="col-sm-12">
+
+      {{ content_top }}
+
+
+
+      <div class="row ac_menu">
+
+
+
+
+        <div class="col-sm-3">
+          <a class="col-sm-12" href="{{ account }}" style="display:block;">
+            <img width="120" src="image/icons/Icon1.png" /><br />
+            <p class="atag">Account
+              Details</p>
+            <p class="ac_description">Review your personal information.</p> <br />
+          </a>
+        </div>
+
+
+        <div class="col-sm-3">
+          <a class="col-sm-12" href="{{ wishlist }}" style="display:block;">
+            <img width="120" src="image/icons/Icon3.png" /><br />
+            <p class="atag">Wishlist</p>
+            <p class="ac_description">Don't lose sight of the articles you like most, access your wishlist here.
+            </p>
+          </a>
+        </div>
+
+
+        <div class="col-sm-3">
+          <a class="col-sm-12" href="{{ order }}" style="display:block;">
+            <img width="120" src="image/icons/Icon2.png" /><br />
+            <p class="atag">Order History</p>
+            <p class="ac_description">Check the history and current status of your orders.</p>
+
+          </a>
+
+        </div>
+
+        <div class="col-sm-3">
+          <a class="col-sm-12" href="index.php?route=account/quotation" style="display:block;">
+            <img width="120" src="image/icons/Icon4.png" /><br />
+            <p class="atag">Quotation History</p>
+            <p class="ac_description">Check the history of your quotations.</p>
+
+          </a>
+
+        </div>
+
+        <div class="col-sm-3">
+          <a class="col-sm-12" href="index.php?route=account/draft" style="display:block;">
+            <img width="120" src="image/icons/Icon5.png" /><br />
+            <p class="atag">Saved Drafts</p>
+            <p class="ac_description">Check your saved drafts.</p>
+
+          </a>
+
+        </div>
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+    </div>
+  </div>
+
+</div>
+{{ footer }}

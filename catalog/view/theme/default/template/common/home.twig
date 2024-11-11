@@ -1,0 +1,473 @@
+{{ header }}
+<style>
+	.section {
+		padding-top: 1.5rem;
+		padding-bottom: 0.5rem;
+	}
+
+	.take_img {
+		position: absolute;
+		top: -55px;
+		height: 350px;
+		left: 20%;
+
+	}
+
+	.main_img {
+		position: absolute;
+		top: -115px;
+		left: 25%;
+
+	}
+
+	.margin_h {
+		margin-top: 100px;
+	}
+</style>
+<script src="
+			https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
+			"></script>
+<link href="
+			https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+			" rel="stylesheet">
+<!-- hero slider area start -->
+<section class="slider-area">
+
+	<div class="row" style="margin:0px;">
+		<div class="slider_banner " style="width:100%;">
+			<div class="desktop-slider hero-slider-active slick-arrow-style slick-arrow-style_hero slick-dot-style">
+				{% for banner in banners %}
+				<a href="{{ banner.link }}">
+					<img src="{{ banner.image }}" alt="" class="img-response slider-img">
+				</a>
+				{% endfor %}
+			</div>
+			<div class="mob-slider hero-slider-active slick-arrow-style slick-arrow-style_hero slick-dot-style">
+				{% for banner in bannersmob %}
+				<a href="{{ banner.link }}">
+					<img src="{{ banner.image }}" alt="" class="img-response slider-img">
+				</a>
+				{% endfor %}
+			</div>
+		</div>
+
+	</div>
+
+</section>
+<!-- hero slider area end -->
+
+
+<!--New arrivals -->
+<section class="new-arrivals mt-4">
+	<div class="" style="padding:0 5%;">
+		<div class="row">
+			<div class="col-12 text-center">
+				<br />
+				<h2 class="new_font">Radiate, Dazzle, Excel</h2>
+
+				<br />
+			</div>
+		</div>
+
+		<div class="row">
+			{% for product in shine_img %}
+
+			<div class="col-md-4 col-4">
+				<div class="product-card text-center" >
+					<a href="{{product.href}}">
+
+						<img src="{{product.thumb}}" alt=""  class="img-responsive">
+
+					</a>
+
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+
+	</div>
+</section>
+<!--New arrivals -->
+<section class="slider-area section">
+
+	<div class="row" style="margin:0px;">
+		<div class="slider_banner " style="width:100%;">
+			<div class="desktop-slider hero-slider-active slick-arrow-style slick-arrow-style_hero slick-dot-style">
+				{% for banner in banners1 %}
+				<a href="{{ banner.link }}">
+					<img src="{{ banner.image }}" alt="" class="img-response slider-img">
+				</a>
+				{% endfor %}
+			</div>
+		</div>
+
+	</div>
+
+</section>
+
+
+<!---Shop by room------>
+
+<section class="section">
+
+
+	<div class="container ">
+		<div class="row">
+			<div class="col-12 ">
+				<h2 class="elementor-heading-title elementor-size-default text-center new_font">Shop By Category</h2>
+				<h3 class="elementor-heading-title elementor-size-default text-center new_font mt-4">Diamond</h3>
+				<section class="splide splide1 mt-3" aria-label="Splide Basic HTML Example">
+					<div class="splide__track">
+						<ul class="splide__list">
+
+
+							{% for product in style_categories1 %}
+							{% if product.name == "View All Diamond Jewellery" %}
+
+							{% else %}
+
+							<li class="splide__slide">
+								<div class="product-card text-center">
+									<a href="{{product.href}}">
+										<img src="{{product.thumb}}" alt="" class="img-responsive">
+									</a>
+									<h4 class="product_name" style="color: #151515 !important;">{{product.name}}</h4>
+
+								</div>
+							</li>
+
+							{% endif %}
+							{% endfor %}
+
+
+
+						</ul>
+					</div>
+				</section>
+
+				<h3 class="elementor-heading-title elementor-size-default text-center new_font mt-3">Polki</h3>
+
+				<section class="splide splide2 mt-3" aria-label="Splide Basic HTML Example">
+					<div class="splide__track">
+						<ul class="splide__list">
+
+							{% for product in style_categories2 %}
+							{% if product.name == "View All Polki Jewellery" %}
+
+							{% else %}
+
+							<li class="splide__slide">
+								<div class="product-card text-center">
+									<a href="{{product.href}}">
+										<img src="{{product.thumb}}" alt="" class="img-responsive">
+									</a>
+									<h4 class="product_name" style="color: #151515 !important;">{{product.name}}
+									</h4>
+
+								</div>
+							</li>
+
+							{% endif %}
+							{% endfor %}
+						</ul>
+					</div>
+				</section>
+
+
+
+			</div>
+		</div>
+	</div>
+</section>
+
+<!---Shop by room------>
+
+<section class="section">
+
+	<div class="">
+		<div class="row m-0">
+			<div class="col-12 text-center p-0">
+				<h2 class="elementor-heading-title elementor-size-default text-center new_font">You Flicker, We Amplify
+				</h2>
+				<div class="row mt-4 ml-0 mr-0">
+					<a href="index.php?route=product/category&path=107_97"><img src="image/banner/Divine_Banner_2_b.jpg"
+							alt="" width="100%" class="img-responsive"></a>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>
+<section class="section">
+
+	<div class="container mb-3">
+		<div class="row justify-content-space-around">
+
+			<div class="col-md-6">
+				<img src="image/about.png" alt="" class="img-responsive">
+
+			</div>
+			<div class="col-md-6 text-start mt-3 mob_center">
+				<h2 class="elementor-heading-title elementor-size-default text-start new_font">Our
+					Story</h2>
+				<br>
+				<h4 class="elementor-heading-title elementor-size-default text-start mt-2 new_font">Divine - The
+					Jewellery Lounge... story of
+					jewels!</h4>
+				<p class="mt-3">
+					Welcome to Divine, a premier jewellery lounge that embodies elegance, craftsmanship, and a touch of
+					the divine. At Divine, we curate and create exquisite jewellery pieces that exude timeless beauty
+					and capture the essence of divine aesthetics.
+				</p>
+				<br>
+				<a href="index.php?route=common/aboutus" style="color:#333;font-size: 16px;font-weight: 500;">
+					Discover More &#8594;
+
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="section  mt-5 " style="padding:0 5%;">
+	<h2 class="elementor-heading-title elementor-size-default text-center mb-4 new_font d-none">Enter The World Of
+		Divine</h2>
+	<div class=" row  justify-content-center">
+
+		<div class="col-md-10 pt-3">
+			<div class=" d-none main_height p-0" style="background-color: #d9efe9; min-height:400px;">
+				<div class="main main_mob" style="background-color: #bde1d7;margin: 80px 110px;width:100%;">
+					<div class="row">
+						<div class="col-md-5 col-5">
+							<img class="take_img" src="image/banner/main_take.jpg" alt="">
+
+						</div>
+						<div class="col-md-7 col-7 row text-center ">
+							<div class="col-12 mt-2">
+								<img class="main_img" src="image/banner/take2.png" width="250"
+									style="transform: rotate(45deg);" alt="">
+							</div>
+
+							<h4 class="margin_h col-12 mob_font "
+								style="    font-family: 'Montserrat', sans-serif !important;">Emerald Jewellery
+								Collection</h4>
+							<h6 class="mt-2 col-12 mob_font"
+								style="font-size:15px;font-family: 'Montserrat', sans-serif !important;">
+								Life-affirming Stone with Healing Properties</h6>
+							<div class="col-12 text-center mt-4 mob_margin">
+								<a href="index.php?route=product/category&path=94_95"><button
+										class="btn bg-white col-md-5 col-12 mob_padd" style="font-size:14px">
+										Take A Look</button>
+								</a>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+
+
+
+<section class="section">
+
+	<div class="container">
+		<div class="row m-0 desktop-slider">
+			<div class="col-6 text-center p-0">
+
+				<video autoplay="" loop="" muted="" playsinline="" src="image/celebritie/1.mp4"></video>
+
+			</div>
+			<div class="col-6 text-center p-0">
+
+				<video autoplay="" loop="" muted="" playsinline="" src="image/celebritie/2.mp4"></video>
+
+			</div>
+		</div>
+		<section class="splide splide3 mob-slider" aria-label="Splide Basic HTML Example">
+			<div class="splide__track">
+				<ul class="splide__list">
+					<li class="splide__slide">
+						<video autoplay="" loop=""style="width:100%;" muted="" playsinline="" src="image/celebritie/1.mp4"></video>
+					</li>
+					<li class="splide__slide">
+						<video autoplay="" loop=""style="width:100%;" muted="" playsinline="" src="image/celebritie/2.mp4"></video>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</div>
+</section>
+<section class="section">
+
+	<div class="">
+		<div class="row m-0">
+			<div class="col-12 text-center p-0">
+
+				<div class="row mt-4 ml-0 mr-0">
+					<a href="index.php?route=common/celebrities"><img src="image/banner/Divine_Banner_10.jpg" alt=""
+							width="100%" class="img-responsive"></a>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--instagram feed -->
+<section>
+	<div class="container text-center mt-5">
+		<h2 class="elementor-heading-title elementor-size-default new_font" style=" width:100%;">
+			Follow us on Instagram</h2>
+		<div class="row mt-3">
+			<div class="col-12" style="margin-top:10px">
+				{#
+				<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+				<div class="elfsight-app-8674d6d0-1d23-4bf6-a003-4f998062b560"></div> #}
+				<img src="image/insta.png" alt="" class="img-responsive">
+			</div>
+		</div>
+	</div>
+</section>
+<br /><br />
+<script>
+
+	var splide = new Splide('.splide1', {
+
+		perPage: 5,
+		perMove: 2,
+		breakpoints: {
+			640: {
+				perPage: 2,
+
+			},
+			767: {
+				perPage: 3,
+
+			},
+			1024: {
+				perPage: 5,
+
+			},
+		},
+
+		gap: '3em',
+	});
+
+	splide.mount();
+	var splide = new Splide('.splide3', {
+
+		perPage: 1,
+		perMove: 1,
+		breakpoints: {
+			640: {
+				perPage: 1,
+
+			},
+			767: {
+				perPage: 1,
+
+			},
+			1024: {
+				perPage: 1,
+
+			},
+		},
+
+		gap: '3em',
+	});
+
+	splide.mount();
+	var splide = new Splide('.splide2', {
+
+		perPage: 4,
+		perMove: 2,
+		breakpoints: {
+			640: {
+				perPage: 2,
+
+			},
+			767: {
+				perPage: 3,
+
+			},
+			1024: {
+				perPage: 4,
+
+			},
+		},
+
+		gap: '3em',
+	});
+
+	splide.mount();
+
+
+
+
+
+	var swiper = new Swiper(".topSwiper", {
+		grabCursor: true,
+		centeredSlides: true,
+		slidesPerView: 3,
+		spaceBetween: 20,
+		loop: true,
+
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev'
+		}
+	});
+
+
+	var currentImage;
+
+	var previousButton,
+		nextButton;
+	var thumbnails,
+		thumbnailButtons;
+
+	window.addEventListener('DOMContentLoaded', function (e) {
+		currentImage = document.querySelector('.current-image');
+		previousButton = document.querySelector('.carousel .previous-button');
+		nextButton = document.querySelector('.carousel .next-button');
+		thumbnails = document.querySelectorAll('.carousel .thumbnail');
+		thumbnailButtons = document.querySelectorAll('.carousel .thumbnail-button');
+
+		thumbnailButtons.forEach(function (thumbnailButton) {
+			thumbnailButton.addEventListener('click', function (e) {
+				activateThumbnail(thumbnailButton);
+			});
+		});
+
+
+	});
+
+
+	/**
+		  Update the large current image when a thumbnail button is activated.
+		*/
+	function activateThumbnail(thumbnailButton) {
+		// Swap the current image based to match the thumbnail
+		// - If you'd like to use separate images, like higher-res versions, consider using the index to pick an appropriate src string from an array, or storing the URI of the higher-res image in a custom data attribute on the thumbnail.
+		var newImageSrc = thumbnailButton.querySelector('img').getAttribute('src');
+		var newImageAlt = thumbnailButton.querySelector('img').getAttribute('data-full-alt');
+		currentImage.querySelector('img').setAttribute('src', newImageSrc);
+		currentImage.querySelector('img').setAttribute('alt', newImageAlt);
+
+		// Remove aria-current from any previously-activated thumbnail
+		thumbnailButtons.forEach(function (button) {
+			button.removeAttribute('aria-current');
+		});
+
+		// Indicate to screen readers which thumbnail is selected using aria-current
+		thumbnailButton.setAttribute('aria-current', true);
+	}
+</script>
+{{ footer }}

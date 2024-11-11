@@ -1,0 +1,151 @@
+{{ header }}{{ column_left }}
+<div id="content">
+  <div class="page-header">
+    <div class="container-fluid">
+      <div class="pull-right">
+
+	  	<a href="{{ cancel }}" data-toggle="tooltip" title="{{ button_cancel }}" class="btn btn-default"><i class="fa fa-reply"></i></a>
+      </div>
+      <h1>{{ heading_title }}</h1>
+      <ul class="breadcrumb">
+        {% for breadcrumb in breadcrumbs %}
+        <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="container-fluid">
+	
+		Click to export products CSV
+		<div class="text-danger"></div>
+		<button id="btnExportToCsv" type="submit">Export</button>
+
+	
+  </div>
+</div>
+
+
+<div style="display:none">
+    <table id="dataTable" class="table">
+        <thead>
+            <tr>
+                <th>S.no</th>
+                <th>Product Name</th>
+                <th>Model No.</th>
+                <th>Variant Name</th>
+                <th>Variant Option</th>
+                <th>Quantity</th>
+				<th>ID</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% set i = 0 %}
+            {% for product in products %}
+				{% set i=i+1%}
+					<tr>
+					<td>{{ i }}</td>
+					<td>{{ product.name }}</td>
+					<td>{{ product.model }}</td>
+					<td></td>
+					<td></td>
+					<td>{{product.quantity}}</td>
+					<td>{{product.product_id}}</td>
+					</tr>
+				{% if product.options %}
+					{% for option in product.options %}
+						{% if option.product_option_value %}
+							{% for option_value in option.product_option_value %}
+								{% set i=i+1%}
+								<tr>
+								<td>{{ i }}</td>
+								<td>{{ product.name }}</td>
+								<td>{{ product.model }}</td>
+								<td>{{option.name}}</td>
+								<td>{{option_value.name}}</td>
+								<td>{{option_value.quantity}}</td>
+								<td>{{option_value.product_option_value_id}}</td>
+								</tr>
+							{%endfor %}
+						{%endif%}
+					{%endfor %}
+				{% endif %}
+              
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<script>
+
+	class TableCSVExporter {
+		constructor (table, includeHeaders = true) {
+			this.table = table;
+			this.rows = Array.from(table.querySelectorAll("tr"));
+
+			if (!includeHeaders && this.rows[0].querySelectorAll("th").length) {
+				this.rows.shift();
+			}
+		}
+
+		convertToCSV () {
+			const lines = [];
+			const numCols = this._findLongestRowLength();
+
+			for (const row of this.rows) {
+				let line = "";
+
+				for (let i = 0; i < numCols; i++) {
+					if (row.children[i] !== undefined) {
+						line += TableCSVExporter.parseCell(row.children[i]);
+					}
+
+					line += (i !== (numCols - 1)) ? "," : "";
+				}
+
+				lines.push(line);
+			}
+
+			return lines.join("\n");
+		}
+
+		_findLongestRowLength () {
+			return this.rows.reduce((l, row) => row.childElementCount > l ? row.childElementCount : l, 0);
+		}
+
+		static parseCell (tableCell) {
+			let parsedValue = tableCell.textContent;
+
+			// Replace all double quotes with two double quotes
+			parsedValue = parsedValue.replace(/"/g, `""`);
+
+			// If value contains comma, new-line or double-quote, enclose in double quotes
+			parsedValue = /[",\n]/.test(parsedValue) ? `"${parsedValue}"` : parsedValue;
+
+			return parsedValue;
+		}
+	}
+
+
+
+	const dataTable = document.getElementById("dataTable");
+	const btnExportToCsv = document.getElementById("btnExportToCsv");
+
+	btnExportToCsv.addEventListener("click", () => {
+		const exporter = new TableCSVExporter(dataTable);
+		const csvOutput = exporter.convertToCSV();
+		const csvBlob = new Blob([csvOutput], { type: "text/csv" });
+		const blobUrl = URL.createObjectURL(csvBlob);
+		const anchorElement = document.createElement("a");
+
+		anchorElement.href = blobUrl;
+		anchorElement.download = "table-export.csv";
+		anchorElement.click();
+
+		setTimeout(() => {
+			URL.revokeObjectURL(blobUrl);
+		}, 500);
+	});
+</script>
+
+
+
+{{ footer }} 

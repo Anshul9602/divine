@@ -1,0 +1,192 @@
+{{ header }}
+<style>
+   h4.font-18{
+    font-size:18px;
+    margin-bottom:20px;
+   } 
+</style>
+<div class="content">
+    <div class="container ptb-50">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h3>Secure Checkout</h3>
+                <hr />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+               <h4 class='font-18'>Billing Address</h4> 
+               <p class='text-capitalize'>{{ order_data.payment_firstname }} {{ order_data.payment_lastname }}<br />
+                {{ order_data.payment_address_1 }}  {{ order_data.payment_address_2 }} <br />
+                {{ order_data.payment_city }},  {{ order_data.payment_zone }}<br />
+                {{ order_data.payment_country }} {{ order_data.payment_postcode }}</p>
+            </div>
+            
+            <div class="col-sm-3">
+            <h4 class='font-18'>Shipping Address</h4> 
+                <p class='text-capitalize'>{{ order_data.shipping_firstname }} {{ order_data.shipping_lastname }}<br />
+                {{ order_data.shipping_address_1 }}  {{ order_data.shipping_address_2 }} <br />
+                {{ order_data.shipping_city }},  {{ order_data.shipping_zone }}<br />
+                {{ order_data.shipping_country }} {{ order_data.shipping_postcode }}</p>
+            </div>
+            <div class="col-sm-3">
+            <h4 class='font-18'>Shipping Methods</h4> 
+            <p>Standard Shipping</p>
+                <div class='d-none' id="shipping-body">
+                {% for shipping_method in shipping_methods %}
+                  <p><strong>{{ shipping_method.title }}</strong></p>
+                  {% if not shipping_method.error %}
+                  {% for quote in shipping_method.quote %}
+                  <div class="radio">
+                    <label> {% if quote.code == code or not code %}
+                      {% set code = quote.code %}
+                      <input type="radio" name="shipping_method" value="{{ quote.code }}" checked="checked" />
+                      {% else %}
+                      <input type="radio" name="shipping_method" value="{{ quote.code }}" />
+                      {% endif %}
+                      {{ quote.title }} - {{ quote.text }}</label>
+                  </div>
+                  {% endfor %}
+                  {% else %}
+                  <div class="alert alert-danger alert-dismissible">{{ shipping_method.error }}</div>
+                  {% endif %}
+                  {% endfor %}
+                  <textarea name="comment" style="display:none" rows="8" class="form-control">{{ comment }}</textarea>
+                  </div>
+                </div>
+            <div class="col-sm-3">
+              <span id="payment_appen">
+
+              </span>
+            </div>
+        </div>
+        <div class="row">
+        <div style="margin-top:30px; padding-right:20px" class="col-sm-4">
+          <div class="col-sm-12" style="background-color:#f1f1f1">
+           <h4>NEED HELP ORDERING?</h4>
+            <p style="padding:20px; font-size:14px">
+              
+              EMAIL: abhinavdhadda@gmail.com</br>
+              PHONE:+91 98290 65718
+              </p>
+            <hr style="margin:0">
+            <h4>SHIPPING &amp; FULFILLMENT></h4>
+            <p style="padding:20px; font-size:14px">
+              
+             EXPECTED DELIVERY TIME (For in-stock products) -<br>
+INDIA: 3-14 Days<br>
+OTHER COUNTRIES: 10-30 Days<br>
+              <a href="index.php?route=information/contact">CONTACT US</a> FOR OUT OF STOCK PRODUCTS
+            </p>
+          </div>
+        </div>
+        <div style="margin-top:30px; background-color:#fff; padding:10px" class="col-sm-8 col-xs-12">
+          <span id="confirm_box">
+
+          </span>
+        </div>
+        </div>
+    </div>
+</div>
+<script>
+  $(document).ready(function(e) {
+    $.ajax({
+      url: 'index.php?route=checkout/shipping_method/save',
+      type: 'post',
+      data: $('input[name=\'shipping_method\']:checked, textarea'),
+      dataType: 'json',
+      success: function(data) {
+        console.log("api1");
+        console.log(data);
+        $.ajax({
+          url: 'index.php?route=checkout/payment_method',
+          dataType: 'html',
+          complete: function() {
+            $('#button-shipping-method').button('reset');
+          },
+          success: function(html) {
+            console.log(html);
+            $('#payment_appen').html(html);
+
+            $.ajax({
+              url: 'index.php?route=checkout/payment_method/save',
+              type: 'post',
+              data: $('input[name=\'payment_method\']:checked, textarea'),
+              dataType: 'json',
+              beforeSend: function() {
+                $('#button-payment-method').button('loading');
+              },
+              success: function(json) {
+                $.ajax({
+                  url: 'index.php?route=checkout/confirm',
+                  dataType: 'html',
+                  complete: function() {
+                    $('#button-payment-method').button('reset');
+                  },
+                  success: function(html) {
+                    $('#confirm_box').html(html);
+                  },
+                  error: function(xhr, ajaxOptions, thrownError) {
+                    alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr
+                      .responseText);
+                  }
+                })
+                console.log(json);
+              },
+              error: function(xhr, ajaxOptions, thrownError) {
+                alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+              }
+
+            })
+
+
+          }
+        })
+      },
+      error: function(xhr, ajaxOptions, thrownError) {
+        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+      }
+
+    })
+  });
+
+  $("body").on("change", "input[name=\'payment_method\']", function() {
+    $.ajax({
+      url: 'index.php?route=checkout/payment_method/save',
+      type: 'post',
+      data: $('input[name=\'payment_method\']:checked, textarea'),
+      dataType: 'json',
+      beforeSend: function() {
+        $('#button-payment-method').button('loading');
+      },
+      success: function(json) {
+        $.ajax({
+          url: 'index.php?route=checkout/confirm',
+          dataType: 'html',
+          complete: function() {
+            $('#button-payment-method').button('reset');
+          },
+          success: function(html) {
+            $('#confirm_box').html(html);
+          },
+          error: function(xhr, ajaxOptions, thrownError) {
+            alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+          }
+        })
+        console.log(json);
+      },
+      error: function(xhr, ajaxOptions, thrownError) {
+        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+      }
+
+    })
+
+  })
+</script> 
+            
+            
+      
+
+   
+
+{{ footer }}

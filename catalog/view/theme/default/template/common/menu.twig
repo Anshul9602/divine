@@ -1,0 +1,36 @@
+{% if categories %}
+<nav class="desktop-menu text-center">
+  <ul class="header-style-4 text-center justify-content-center">
+    {% for category in categories %}
+    {% if category.children %}
+    <li class="dropdown" style="padding:35px 0px;">
+      <a href="" class="dropdown-toggle ">{{ category.name }}</a>
+      <ul class="dropdown">
+        <div class="row" style="width: 100%;">
+          <div class="col-md-6 p-3 text-start">
+            {% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
+            {% for child in children %}
+            {% if child.name == "View All" %}
+            <li class="text-start" style="text-align: start;"><a href="{{ child.href }}">{{ child.name }}&#8594</a></li>
+            {% else %}
+            <li class="text-start" style="text-align: start;"><a href="{{ child.href }}">{{ child.name }}</a></li>
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+          </div>
+          <div class="col-md-6 p-3" style="margin-bottom:15px;margin-top:15px;">
+            <img src="{{ category.image }}" alt="" style="width:100%;">
+          </div>
+        </div>
+
+      </ul>
+    </li>
+    {% else %}
+    <li><a href="{{ category.href }}">{{ category.name }}</a></li>
+    {% endif %}
+    {% endfor %}
+
+  </ul>
+</nav>
+
+{% endif %}

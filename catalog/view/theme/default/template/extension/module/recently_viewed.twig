@@ -1,0 +1,39 @@
+
+<!-- Recent viewed -->
+<section style="background:#F1F7EF" class="cares separation ptb-50">
+  <div class="container new-font">
+    <div class="row">
+      <div class="col-12 text-center">
+        <img src="image/elements/el.png" alt="" class="rose-element" />
+        <h2 style="text-align: center; margin-bottom: 20px">Recently Viewed</h2>
+        <br />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+            <div style="overflow-x:hidden" class="swiper topSwiper">
+          <div class="swiper-wrapper">
+            {% for product in products %}
+              <div class="swiper-slide">
+                <div class="product-card text-center">
+                  <a href="{{product.href}}">
+                  <img src="{{product.thumb}}" alt="" class="img-responsive">
+                  </a>
+                  <h4 class="product_name">{{product.name}}</h4>
+                  <p class="product_price">{{product.price}}</p>
+                </div>
+              </div>  
+            {% endfor %}
+          </div>
+            <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+       </div>
+      </div>
+     
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end Recent viewed -->

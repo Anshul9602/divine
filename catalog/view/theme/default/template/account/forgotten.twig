@@ -1,0 +1,60 @@
+{{ header }}
+<div id="account-forgotten" class="container">
+  <div class="breadcrumb-area hidden-phone">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="breadcrumb-wrap">
+            <nav aria-label="breadcrumb">
+              <ul class="breadcrumb">
+                {% for breadcrumb in breadcrumbs %}
+                <li class="ml-2">
+                  <a href="{{ breadcrumb.href }}" style="text-transform: uppercase;">{{ breadcrumb.text }}</a>
+                </li>
+                &nbsp;/
+                {% endfor %}
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% if error_warning %}
+  <div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}</div>
+  {% endif %}
+  <div class="row">{{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-sm-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content" class="{{ class }}  text-center" style="min-height: 600px;margin-top:10%;">{{ content_top }}
+      <h4>{{ heading_title }}</h4>
+
+      <form action="{{ action }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+        <fieldset>
+
+          <div class="form-group required d-flex justify-content-space-around">
+
+            <div class="col-md-8 mt-5">
+              
+              <input type="text" name="email" value="{{ email }}" placeholder="{{ entry_email }}" id="input-email"
+                class="form-control" />
+            </div>
+          </div>
+        </fieldset>
+        <div class="buttons clearfix mt-5">
+          <div class="pull-left"><a href="{{ back }}" class="btn btn-default">{{ button_back }}</a></div>
+          <div class="pull-right">
+            <input type="submit" value="{{ button_continue }}" class="btn btn-primary" />
+          </div>
+        </div>
+      </form>
+      {{ content_bottom }}
+    </div>
+  </div>
+</div>
+{{ footer }}

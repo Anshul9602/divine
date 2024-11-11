@@ -1,0 +1,87 @@
+<style>
+    .cart-body .cart-body{
+        height:auto;
+        overflow-y:auto;
+    }
+</style>
+<div class="cart_backdrop"></div>
+<div class="cart">
+   <div class="cart-header">
+      <h5 style="color:#fff !important;"> Cart - <font class="cart-item"style="color:#fff;">  <span id="cart-total"style="color:#fff;">{{ text_items }}</span></font></h5>
+      <li class="fa fa-close cart-close"></li>
+   </div>
+   <div class="cart-body">
+      
+   {% if products or vouchers %}
+        {% for product in products %}
+       <div class="row m-0">
+        <div class="col-4">
+            {% if product.thumb %} 
+              <img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-cart" />
+             {% endif %}
+        </div>
+        <div class="col-8" style="padding-right:20px; padding-left:5px">
+            <h4 class="text-capitalize" style="margin-top:10px">{{ product.name }}</h4>
+            {% if product.option %}
+               {% for option in product.option %} <br />
+               - <small>{{ option.name }} {{ option.value }}</small> {% endfor %}
+               {% endif %}
+               {% if product.recurring %} <br />
+               - <small>{{ text_recurring }} {{ product.recurring }}</small> {% endif %}
+               <p style="color:#666; font-size:11px">{{ product.price }} x {{ product.quantity }}</p>
+               <p><font style="font-size:10px"><i>Item Total</i></font> : {{ product.total }}</p>
+               <li onclick="cart.remove('{{ product.cart_id }}');" class="fa fa-close remove-cart-item"></li>
+        </div>
+       </div>
+       <div class="row m-0">
+        <div class="col-sm-12">
+            <hr />
+        </div>
+       </div>
+         {% endfor %}
+      {% else %}
+
+  
+         <p class="text-center">
+           <img src="assets/img/cart_empty.jpg" alt="" class="img-empty-cart">
+           <br />
+          {{ text_empty }}
+        </p>
+      
+      {% endif %}
+   </div>
+   <div class="cart-footer">
+      <div style="padding:10px 10px 0px 10px; margin:0px " class="row">
+         <div class="col-6">
+            <h5>Total:</h5>
+         </div>
+         <div class="col-6 text-right">
+            <h5 class='slide-cart-total'>{{ final_total }}</h5>
+         </div>
+         
+      </div>
+      <a href="index.php?route=checkout/cart">
+         <button class="btn btn-primary view-cart-btn">
+            <li class="fa fa-shopping-bag"></li>
+            View Cart
+         </button>
+      </a>
+       <a href="index.php?route=checkout/guest_new">
+      <button class="btn btn-primary cart-checkout" style="margin:0 10px 10px 10px;width:280px !important;">Checkout Now</button>
+      </a>
+   </div>
+</div>
+
+
+<script>
+   $(document).ready(function(){
+       $('.cart-close,.cart_backdrop').click(function(){
+           $('.cart_backdrop').fadeOut();
+           $(".cart").animate({right:'-300px'})
+       })
+       $('.minicart-btn').click(function(){
+           $('.cart_backdrop').fadeIn();
+           $(".cart").animate({right:'0px'})
+       })
+   })
+</script>

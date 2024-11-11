@@ -1,0 +1,230 @@
+{{ header }}
+
+<style>
+	@media screen and (max-width: 1450px) {
+		.product-thumb .image_1 {
+			height: 250px !important;
+		}
+	}
+
+	@media screen and (max-width: 950px) {
+		.product-thumb .image_1 {
+			height: 200px !important;
+		}
+		.product_name{
+			font-size:12px !important;
+			letter-spacing:1px;
+		}
+	}
+</style>
+
+
+<div id="product-category" style="padding:0 5%;">
+	<div class="row">
+
+
+
+		<div  style="min-height:600px" class="col-12">
+			<div class="row">
+				<div class="col-sm-12 text-center">
+					<br />
+					<h1>{{ heading_title }}</h1>
+					<br />
+				</div>
+			</div>
+			{% if categories %}
+			<h3>{{ text_refine }}</h3>
+			{% if categories|length <= 5 %} <div class="row">
+				<div class="col-sm-3">
+					<ul>
+						{% for category in categories %}
+						<li>
+							<a href="{{ category.href }}">{{ category.name }}</a>
+						</li>
+						{% endfor %}
+					</ul>
+				</div>
+		</div>
+		{% else %}
+		<div class="row">
+			{% for category in categories|batch((categories|length / 4)|round(1, 'ceil')) %}
+			<div class="col-sm-3">
+				<ul>
+					{% for child in category %}
+					<li>
+						<a href="{{ child.href }}">{{ child.name }}</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+			{% endfor %}
+		</div>
+		<br />
+		{% endif %}
+		{% endif %}
+		{% if products %}
+		<div class="row">
+			<div style="display:none" class="col-md-2 col-sm-6 hidden-xs">
+				<div class="btn-group btn-group-sm">
+					<button type="button" id="list-view" class="btn btn-default" data-toggle="tooltip"
+						title="{{ button_list }}">
+						<i class="fa fa-th-list"></i>
+					</button>
+					<button type="button" id="grid-view" class="btn btn-default" data-toggle="tooltip"
+						title="{{ button_grid }}">
+						<i class="fa fa-th"></i>
+					</button>
+				</div>
+			</div>
+
+
+			<div style="display:none" class="col-md-3 col-xs-6">
+				<div class="form-group input-group input-group-sm">
+					<label class="input-group-addon" for="input-limit">{{ text_limit }}</label>
+					<select id="input-limit" class="form-control" onchange="location = this.value;">
+						{% for limits in limits %}
+						{% if limits.value == limit %}
+						<option value="{{ limits.href }}" selected="selected">{{ limits.text }}</option>
+						{% else %}
+						<option value="{{ limits.href }}">{{ limits.text }}</option>
+						{% endif %}
+						{% endfor %}
+					</select>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+
+			{{ column_left }}
+
+
+			<div class="col-md-9">
+				<div class="col-md-12 col-xs-6 d-flex justify-content-end">
+					<div class="col-md-3 form-group input-group input-group-sm mb-0">
+						<select id="input-sort" class="form-control" onchange="location = this.value;">
+							{% for sorts in sorts %}
+							{% if sorts.value == '%s-%s'|format(sort, order) %}
+							<option value="{{ sorts.href }}" selected="selected">{{ sorts.text }}</option>
+							{% else %}
+							<option value="{{ sorts.href }}">{{ sorts.text }}</option>
+							{% endif %}
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+				
+				<div class="row">
+					{% for product in products %}
+
+					
+					<div class="col-md-4 col-6 mt-4 product-item" >
+
+						<div class="product-thumb product-card text-center">
+							<div class="image image_1" style="height:350px;overflow: hidden;position: relative;">
+								<a href="{{ product.href }}">
+								<img style="margin-top: -25%;margin-bottom: -25%;"src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}"class="img-responsive pri-img" />
+								<img style="margin-top: -25%;margin-bottom: -25%;"src="{{  product.image11 }}" alt="{{ product.name }}" title="{{ product.name }}"class="img-responsive sec-img" />
+								</a>
+							</div>
+							<a class="wishlist_link " onclick="wishlist.add('{{ product.product_id }}');">
+								{% if not product.wish %}
+
+								<i class="pe-7s-like" btnid="{{ product.product_id }}" btnname="{{ product.name }}"
+									btnimg="{{ product.thumb }}" btnhref="{{ product.href }}"
+									btnprice="{{ product.price }}" btnsprice="{{ product.special }}"
+									btnpercent="{{ product.percent }}" style="color: #44b394; font-size:20px;"></i>
+
+
+								{% else %}
+
+								<i class="fa fa-heart" style="color: #44b394; font-size:20px;" aria-hidden="true"></i>
+
+								{% endif %}
+							</a>
+							<div>
+								<div class="caption">
+									<a href="{{ product.href }}">
+										<h6 class="product_name" style="text-transform: uppercase;">{{ product.name }}
+										</h6>
+									</a>
+									{% if product.price  %}
+									  {% if product.price == '₹0'  %}
+									 
+
+									   <div class="row mt-2" style="justify-content: space-around;">
+										<a href="index.php?route=information/contact"><button type="button" style='float:left; max-width:100%'  class="btn col-md-6 col-6 btn-primary btn-lg btn-block mob_text">
+											Request for Price
+										</button></a>
+										
+									    </div>
+                                     {% elseif product.price == '$0' %} 
+									 <div class="row mt-2" style="justify-content: space-around;">
+										<a href="index.php?route=information/contact"><button type="button" style='float:left; max-width:100%'  class="btn col-md-6 col-6 btn-primary btn-lg btn-block mob_text">
+											Request for Price
+										</button></a>
+										
+									    </div>
+										{% else %}
+									   <p class="price mt-2" style="color:#44b394;    font-weight: 500;">
+										{% if not product.special %}
+										{{ product.price }}
+										{% else %}
+										<span class="price-new" style="color:#44b394;    font-weight: 500;">
+											{{ product.special
+											}}</span>
+										<span class="price-old" style="    text-decoration: line-through;">
+											{{ product.price
+											}}</span>
+										{% endif %}
+										{% if product.tax %}
+										<span class="price-tax">{{ text_tax }}
+											{{ product.tax }}</span>
+										{% endif %}
+									   </p>
+									  {% endif %}
+									{% endif %}
+									{% if product.rating %}
+									<div class="rating">
+										{% for i in 1..5 %}
+										{% if product.rating < i %} <span class="fa fa-stack">
+											<i class="fa fa-star-o fa-stack-2x"></i>
+											</span>
+											{% else %}
+											<span class="fa fa-stack">
+												<i class="fa fa-star fa-stack-2x"></i>
+												<i class="fa fa-star-o fa-stack-2x"></i>
+											</span>
+											{% endif %}
+											{% endfor %}
+									</div>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6 text-left">{{ pagination }}</div>
+			<div class="col-sm-6 text-right">{{ results }}</div>
+		</div>
+		<br /><br />
+		{% endif %}
+		{% if not categories and not products %}
+		<p class="text-center">{{ text_empty }}</p>
+		<div class="buttons">
+			<div class="pull-right">
+				<a href="javascript:history.back(1)" class="btn btn-primary">{{ button_continue }}</a>
+			</div>
+		</div>
+		{% endif %}
+		{{ content_bottom }}
+	</div>
+	{{ column_right }}
+</div>
+</div>
+{{ footer }}

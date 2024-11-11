@@ -1,0 +1,97 @@
+{{ header }}
+<style>
+  .list-unstyled li {
+    color: #333;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-top: 5px
+  }
+
+  .list-unstyled li a {
+    color: #ccc
+  }
+
+  .list-unstyled li a:hover {
+    color: #333
+  }
+</style>
+
+<!-- breadcrumb area start -->
+<div class="breadcrumb-area hidden-phone">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="breadcrumb-wrap">
+					<nav aria-label="breadcrumb">
+						<ul class="breadcrumb">
+							{% for breadcrumb in breadcrumbs %}
+								<li class="ml-2">
+									<a href="{{ breadcrumb.href }}" style="text-transform: uppercase;">{{ breadcrumb.text }}</a>
+								</li>
+								&nbsp;/
+							{% endfor %}
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- breadcrumb area end -->
+
+<div style="min-height:50vh;" class="container">
+
+
+
+  <div class="row mbn-30">
+    
+       {% for product in products %}
+      <!-- product single item start -->
+      <div class="col-md-4 col-sm-6">
+        <!-- product grid start -->
+        <div class="">{% if product.thumb %}
+          <figure class="product-thumb">
+            <a href="{{ product.href }}">
+              <img class="pri-img" src="{{ product.thumb }}" alt="product">
+              
+            </a>
+
+          
+          </figure>
+          {% endif %}
+          <div class="product-caption text-center">
+            <h6 class="product-name">
+              <a href="{{ product.href }}">
+               {{ product.name }}
+              </a>
+            </h6>
+           {% if product.price %}
+              {% if not product.special %}
+                
+                <div class="price-box">
+                  <span class="price-regular">
+                    {{ product.price }}
+                  </span>
+                </div>
+                {% else %}
+                <div class="price-box">
+                  <span class="price-regular">{{ product.special }}</span>
+                  <span class="price-old"><del>{{ product.price }}</del></span>
+                </div>
+              {% endif %}
+            {% endif %}
+            <a style="color:#333" href="{{ product.remove }}" class="btn btn-primary mt-2"data-toggle="tooltip" title="{{ button_remove }}">Remove</a>
+
+          </div>
+        </div>
+        <!-- product grid end -->
+      </div>
+    {% endfor %}
+  </div>
+  <br><br><br><br>
+
+</div>
+
+
+
+{{ footer }}

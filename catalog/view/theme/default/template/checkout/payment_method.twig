@@ -1,0 +1,41 @@
+
+{% if payment_methods %}
+<h4 class="font-18">Payment Mode</h4>
+{% for payment_method in payment_methods %}
+<div class="radio">
+  <label>{% if payment_method.code == code or not code %}
+    {% set code = payment_method.code %}
+    <input type="radio" name="payment_method" value="{{ payment_method.code }}" checked="checked" />
+    {% else %}
+    <input type="radio" name="payment_method" value="{{ payment_method.code }}" />
+    {% endif %}
+    {{ payment_method.title }}
+    {% if payment_method.terms %}
+    ({{ payment_method.terms }})
+    {% endif %} </label>
+</div>
+{% endfor %}
+{% endif %}
+
+<p>
+  <textarea style='display:none' name="comment" rows="8" class="form-control">{{ comment }}</textarea>
+</p>
+{% if text_agree %}
+<div class="buttons">
+  <div class="pull-right">{{ text_agree }}
+    {% if agree %}
+    <input type="checkbox" name="agree" value="1" checked="checked" />
+    {% else %}
+    <input type="checkbox" name="agree" value="1" />
+    {% endif %}
+    &nbsp;
+    <input type="button" value="{{ button_continue }}" id="button-payment-method" data-loading-text="{{ text_loading }}" class="btn btn-primary" />
+  </div>
+</div>
+{% else %}
+<div style='display:none' class="buttons">
+  <div class="pull-right">
+    <input type="button" value="{{ button_continue }}" id="button-payment-method" data-loading-text="{{ text_loading }}" class="btn btn-primary" />
+  </div>
+</div>
+{% endif %} 

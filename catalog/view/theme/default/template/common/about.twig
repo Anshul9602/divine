@@ -1,0 +1,147 @@
+{{header}}
+<style>
+	.parallax {
+		background-image: url('image/divine/2.jpg');
+		height: 300px;
+		width: 100%;
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.mobile-banner {
+		display: none;
+	}
+	@media screen and (max-width: 850px) {
+		.parallax {
+			
+			background-image: url('image/divine/3.jpg') !important;
+		}
+		.mobile-banner {
+			display: block !important;
+		}
+		.our_prod {
+			text-align: center;
+		}
+		.desktop-banner {
+			display: none;
+		}
+	}
+</style>
+<div class="row" style="margin:0px;">
+	<div class="col-sm-12 desktop-banner" style="padding:0px">
+		<img src="image/1.jpg" alt="" style="width:100%;" class="img-responsive"/>
+	</div>
+
+	<div class="col-sm-12 mobile-banner" style="padding:0px">
+		<img src="image/1.jpg" alt="" style="width:100%;" class="img-responsive"/>
+	</div>
+
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6 offset-sm-3 text-center">
+			<br/><br/><br/>
+			<p style="font-size:16px">
+
+				Welcome to Divine, a premier jewellery shop that embodies elegance, craftsmanship, and a touch of the divine. At Divine, we curate and create exquisite jewellery pieces that exude timeless beauty and capture the essence of divine aesthetics
+				<br/><br/>
+				Our collections at Divine have garnered accolades and recognition for their exceptional designs and captivating allure. We are honored to have our masterpieces adorned by leading celebrities, including Bollywood icons like Jhanvi Kapoor, Karishma Kapoor, Tara Sutaria, and many more. Our collaborations with prestigious events such as the Lakme Fashion Week and fashion designers' campaigns with renowned brands have placed Divine on the global map of exquisite jewellery.
+			</p>
+			<br/><br/><br/>
+		</div>
+	</div>
+</div>
+<div class="parallax"></div>
+<br/><br/>
+<div class="container">
+	<div class="row" style="display:flex; align-items:center">
+		<div class="col-sm-7 mt-2">
+
+			<p style="font-size:16px" class="our_prod">
+				Step into the world of Divine and explore a treasure trove of divine jewellery creations. Whether you seek a statement piece for a special occasion or a symbol of love and devotion.
+				<br/>
+				<br/>
+				our knowledgeable and passionate team will guide you in finding the perfect piece that resonates with your unique style and captures the essence of divine beauty.
+			</p>
+
+		</div>
+		<div class="col-md-5 mt-2">
+			<img src="image/about.png" alt="" class="img-responsive">
+		</div>
+	</div>
+</div>
+<div class="container mt-4">
+
+
+	<section class="splide splide1" aria-label="Splide Basic HTML Example">
+		<div class="splide__track">
+			<ul class="splide__list">
+				<li class="splide__slide">
+					<video  controls="" muted="" loop="" style="width:100%;" playsinline="" src="image/celebritie/3.mp4"></video>
+		
+				</li>
+				<li class="splide__slide">
+					<video  controls="" muted="" loop="" style="width:100%;" playsinline="" src="image/celebritie/4.mp4"></video>
+		
+				</li>
+				<li class="splide__slide">
+					<video  controls="" muted="" loop="" style="width:100%;" playsinline="" src="image/celebritie/5.mp4"></video>
+		
+				</li>
+				<li class="splide__slide">
+					<video  controls="" muted="" loop="" style="width:100%;" playsinline="" src="image/celebritie/6.mp4"></video>
+		
+				</li>
+				<li class="splide__slide">
+					<video  controls="" muted="" loop="" style="width:100%;" playsinline="" src="image/celebritie/7.mp4"></video>
+		
+				</li>
+				<li class="splide__slide">
+					<video  controls="" muted="" loop="" style="width:100%;" playsinline="" src="image/celebritie/8.mp4"></video>
+		
+				</li>
+				<li class="splide__slide">
+					<video  controls="" muted="" loop="" style="width:100%;" playsinline="" src="image/celebritie/9.mp4"></video>
+		
+				</li>
+				<li class="splide__slide">
+					<video  controls="" muted="" loop="" style="width:100%;" playsinline="" src="image/celebritie/10.mp4"></video>
+		
+				</li>
+			</ul>
+		</div>
+	</section>
+
+
+	
+</div>
+<br/><br/>
+<script>
+	
+	var splide = new Splide('.splide1', {
+		
+		perPage: 2,
+		perMove: 1,
+		breakpoints: {
+			640: {
+				perPage: 1,
+
+			},
+			767: {
+				perPage: 2,
+
+			},
+			1024: {
+				perPage: 2,
+
+			},
+		},
+
+		gap: '2em',
+	});
+
+	splide.mount();
+</script>
+
+{{footer}}

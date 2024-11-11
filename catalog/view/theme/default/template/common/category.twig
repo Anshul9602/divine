@@ -1,0 +1,95 @@
+{{ header }}
+
+<!-- hero slider area start -->
+<section class="slider-area ">
+	
+		<div class="row">
+			{% for banner in banners %}
+				<a href="{{ banner.link }}">
+					<img src="{{ banner.image }}" alt="" class="img-response slider-img">
+				</a>
+			{% endfor %}
+
+		</div>
+	
+</section>
+<!-- hero slider area end -->
+{% if room_categories %}
+<section class="shopy_by_room separation  pb-5" style="background-image:url('image/shop_by_back.jpg');background-size:cover;background-repete:no-repete;">
+	<div class="container pt-5">
+		<div class=" align-items-center heading ">
+			<div class="col-md-12 pt-3">
+				<h2 class="text-center  heading3 bold">Shop By Categories
+						<span class="hb " style="display: flex;justify-content: center;"></span>
+				</h2>
+				<p class="section-header__title mt-1 text-center">
+					A royal fusion of modern and ethnic wear for all occasions.
+				</p>
+			
+			</div>
+
+		</div>
+		<div class="row mt-4 pb-3">
+			{% for category1 in room_categories %}
+			<div class="col-sm-4 col-6 text-center pt-4">
+
+				<div class="prod-card">
+					<a href="{{ category1.href }}">
+						<img  alt=""
+							src="{{ category1.thumb }}">
+
+					</a>
+				</div>
+
+
+
+			</div>
+
+			{% endfor %}
+
+		</div>
+
+	</div>
+</section>
+
+
+
+{% endif %}<!---Shop by room------><!-- mid slider area mid -->
+<!-- mid slider area end -->
+
+
+{{ column_right }}<!-- News -->
+<script>
+	var swiper = new Swiper(".topSwiper", {
+pagination: {
+el: ".top-swiper-pagination",
+clickable: true
+},
+navigation: {
+nextEl: ".swiper-button-next",
+prevEl: ".swiper-button-prev"
+},
+autoplay: false,
+// Default parameters
+slidesPerView: 4,
+spaceBetween: 10,
+// Responsive breakpoints
+breakpoints: { // when window width is >= 320px
+320: {
+slidesPerView: 2,
+spaceBetween: 5
+},
+// when window width is >= 480px
+480: {
+slidesPerView: 2,
+spaceBetween: 5
+},
+// when window width is >= 640px
+640: {
+slidesPerView: 4,
+spaceBetween: 20
+}
+}
+});
+</script>
+{{ footer }}

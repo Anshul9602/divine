@@ -1,0 +1,68 @@
+{% if categories %}
+	<style>
+		.mobile_menu .col-12 hr {
+			margin: 7px 0;
+		}
+		.mobile-navigation {
+			max-height: 500px;
+		}
+		.mobile_menu .col-12 a {
+			text-transform: uppercase;
+			color: #333;
+			font-size: 12px;
+		}
+		.collapse-span {
+			display: none;
+		}
+	</style>
+	<div class="row mobile_menu">
+		<br/>
+		<br/>
+		<div class="col-12" style='margin-top:10px'>
+			<a href="index.php?route=common/home">Home</a>
+			<hr/>
+		</div>
+		
+		<div class="col-12">
+			<a href="index.php?route=common/collection&path=78">COLLECTION</a>
+			<hr/>
+		</div>
+		{% for category in categories %}
+			{% if category.children %}
+				<div class="col-12">
+					<a href="#" class="collapse-toggle">{{ category.name }}</a>
+					<hr/>
+					<span class="collapse-span">
+						{% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
+							{% for child in children %}
+								<div class="col-12">
+									<a href="{{ child.href }}">{{ child.name }}</a>
+									<hr/>
+								</div>
+							{% endfor %}
+						{% endfor %}
+						<span></div>
+					{% else %}
+						{% if category.name == "Diamonds" or category.name == "diamonds"  %}
+							<div class="col-12">
+								<a href="index.php?route=common/diamonds">{{ category.name }}</a>
+								<hr/>
+							</div>
+						{% else %}
+							<div class="col-12">
+								<a href="{{ category.href }}">{{ category.name }}</a>
+								<hr/>
+							</div>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+				
+			{% endif %}
+			<script>
+				$(document).ready(function () {
+$(".collapse-toggle").click(function (e) {
+e.preventDefault();
+$(".collapse-span").slideToggle();
+})
+})
+			</script>

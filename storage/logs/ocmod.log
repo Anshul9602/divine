@@ -1,0 +1,1451 @@
+2023-09-20 13:06:59 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 13
+----------------------------------------------------------------
+MOD: BestPrice 360 Analytics
+
+FILE: catalog/model/checkout/order.php
+CODE: public function getOrder($order_id) {
+LINE: 210
+
+FILE: catalog/controller/checkout/success.php
+CODE: public function index() {
+LINE: 53
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 27
+----------------------------------------------------------------
+MOD: Cashback By Webtuning Technology
+----------------------------------------------------------------
+MOD: Export/Import Tool (V4.13) for OpenCart 3.x
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/upload')) {
+LINE: 609
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_backup']
+LINE: 8
+----------------------------------------------------------------
+MOD: Recently Viewed
+
+FILE: catalog/controller/product/product.php
+CODE: if ($product_info) {
+LINE: 204
+----------------------------------------------------------------
+MOD: |OCT| Facebook Conversion API + Facebook Pixel + Dynamic Ads
+
+FILE: admin/controller/setting/setting.php
+CODE: $data['countries'] =
+LINE: 316
+
+FILE: admin/controller/setting/store.php
+CODE: $data['countries'] =
+LINE: 457
+
+FILE: admin/view/template/setting/setting.twig
+CODE: id="tab-option"
+LINE: 306
+
+FILE: admin/view/template/setting/store_form.twig
+CODE: id="tab-option"
+LINE: 257
+
+FILE: admin/view/template/setting/store_list.twig
+CODE: id="tab-option"
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/controller/common/header.php
+CODE: $data['google_analytics'] =
+NOT FOUND - OPERATION SKIPPED!
+CODE: $data['analytics'] = array();
+LINE: 10
+
+FILE: catalog/controller/checkout/cart.php
+CODE: $json['total'] =
+LINE: 383
+CODE: $json['total'] =
+LINE: 486
+
+FILE: catalog/controller/account/wishlist.php
+CODE: $json['success'] = sprintf($this->language->get('text_success')
+LINE: 152
+
+FILE: (sub modification) catalog/controller/product/product.php
+CODE: $data['footer'] =
+LINE: 501
+LINE: 594
+
+FILE: catalog/controller/product/category.php
+CODE: $data['footer'] =
+LINE: 439
+LINE: 490
+
+FILE: catalog/controller/product/search.php
+CODE: $data['footer'] =
+LINE: 455
+
+FILE: (sub modification) catalog/controller/checkout/cart.php
+CODE: $data['footer'] =
+LINE: 249
+LINE: 269
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: $data['footer'] =
+LINE: 95
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $this->load->view
+LINE: 420
+
+FILE: (sub modification) catalog/controller/checkout/success.php
+CODE: function index
+LINE: 7
+CODE: $data['footer'] =
+LINE: 115
+
+FILE: catalog/controller/account/login.php
+CODE: $data['footer'] =
+LINE: 155
+
+FILE: catalog/controller/account/success.php
+CODE: $data['text_message'] =
+LINE: 29
+LINE: 35
+
+FILE: catalog/controller/information/contact.php
+CODE: $data['footer'] =
+LINE: 141
+LINE: 201
+----------------------------------------------------------------
+2023-09-20 13:27:06 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 13
+----------------------------------------------------------------
+MOD: BestPrice 360 Analytics
+
+FILE: catalog/model/checkout/order.php
+CODE: public function getOrder($order_id) {
+LINE: 210
+
+FILE: catalog/controller/checkout/success.php
+CODE: public function index() {
+LINE: 53
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 27
+----------------------------------------------------------------
+MOD: Cashback By Webtuning Technology
+----------------------------------------------------------------
+MOD: Export/Import Tool (V4.13) for OpenCart 3.x
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/upload')) {
+LINE: 609
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_backup']
+LINE: 8
+----------------------------------------------------------------
+MOD: Installer Fix Allow All directories
+
+FILE: admin/controller/marketplace/install.php
+CODE: if ($safe) {
+LINE: 165
+CODE: if (is_dir($file) && !is_dir($path)) {
+LINE: 226
+----------------------------------------------------------------
+MOD: Recently Viewed
+
+FILE: catalog/controller/product/product.php
+CODE: if ($product_info) {
+LINE: 204
+----------------------------------------------------------------
+MOD: |OCT| Facebook Conversion API + Facebook Pixel + Dynamic Ads
+
+FILE: admin/controller/setting/setting.php
+CODE: $data['countries'] =
+LINE: 316
+
+FILE: admin/controller/setting/store.php
+CODE: $data['countries'] =
+LINE: 457
+
+FILE: admin/view/template/setting/setting.twig
+CODE: id="tab-option"
+LINE: 306
+
+FILE: admin/view/template/setting/store_form.twig
+CODE: id="tab-option"
+LINE: 257
+
+FILE: admin/view/template/setting/store_list.twig
+CODE: id="tab-option"
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/controller/common/header.php
+CODE: $data['google_analytics'] =
+NOT FOUND - OPERATION SKIPPED!
+CODE: $data['analytics'] = array();
+LINE: 10
+
+FILE: catalog/controller/checkout/cart.php
+CODE: $json['total'] =
+LINE: 383
+CODE: $json['total'] =
+LINE: 486
+
+FILE: catalog/controller/account/wishlist.php
+CODE: $json['success'] = sprintf($this->language->get('text_success')
+LINE: 152
+
+FILE: (sub modification) catalog/controller/product/product.php
+CODE: $data['footer'] =
+LINE: 501
+LINE: 594
+
+FILE: catalog/controller/product/category.php
+CODE: $data['footer'] =
+LINE: 439
+LINE: 490
+
+FILE: catalog/controller/product/search.php
+CODE: $data['footer'] =
+LINE: 455
+
+FILE: (sub modification) catalog/controller/checkout/cart.php
+CODE: $data['footer'] =
+LINE: 249
+LINE: 269
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: $data['footer'] =
+LINE: 95
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $this->load->view
+LINE: 420
+
+FILE: (sub modification) catalog/controller/checkout/success.php
+CODE: function index
+LINE: 7
+CODE: $data['footer'] =
+LINE: 115
+
+FILE: catalog/controller/account/login.php
+CODE: $data['footer'] =
+LINE: 155
+
+FILE: catalog/controller/account/success.php
+CODE: $data['text_message'] =
+LINE: 29
+LINE: 35
+
+FILE: catalog/controller/information/contact.php
+CODE: $data['footer'] =
+LINE: 141
+LINE: 201
+----------------------------------------------------------------
+2023-09-20 13:27:42 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 13
+----------------------------------------------------------------
+MOD: BestPrice 360 Analytics
+
+FILE: catalog/model/checkout/order.php
+CODE: public function getOrder($order_id) {
+LINE: 210
+
+FILE: catalog/controller/checkout/success.php
+CODE: public function index() {
+LINE: 53
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 27
+----------------------------------------------------------------
+MOD: Cashback By Webtuning Technology
+----------------------------------------------------------------
+MOD: Export/Import Tool (V4.13) for OpenCart 3.x
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/upload')) {
+LINE: 609
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_backup']
+LINE: 8
+----------------------------------------------------------------
+MOD: Installer Fix Allow All directories
+
+FILE: admin/controller/marketplace/install.php
+CODE: if ($safe) {
+LINE: 165
+CODE: if (is_dir($file) && !is_dir($path)) {
+LINE: 226
+----------------------------------------------------------------
+MOD: Recently Viewed
+
+FILE: catalog/controller/product/product.php
+CODE: if ($product_info) {
+LINE: 204
+----------------------------------------------------------------
+MOD: |OCT| Facebook Conversion API + Facebook Pixel + Dynamic Ads
+
+FILE: admin/controller/setting/setting.php
+CODE: $data['countries'] =
+LINE: 316
+
+FILE: admin/controller/setting/store.php
+CODE: $data['countries'] =
+LINE: 457
+
+FILE: admin/view/template/setting/setting.twig
+CODE: id="tab-option"
+LINE: 306
+
+FILE: admin/view/template/setting/store_form.twig
+CODE: id="tab-option"
+LINE: 257
+
+FILE: admin/view/template/setting/store_list.twig
+CODE: id="tab-option"
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/controller/common/header.php
+CODE: $data['google_analytics'] =
+NOT FOUND - OPERATION SKIPPED!
+CODE: $data['analytics'] = array();
+LINE: 10
+
+FILE: catalog/controller/checkout/cart.php
+CODE: $json['total'] =
+LINE: 383
+CODE: $json['total'] =
+LINE: 486
+
+FILE: catalog/controller/account/wishlist.php
+CODE: $json['success'] = sprintf($this->language->get('text_success')
+LINE: 152
+
+FILE: (sub modification) catalog/controller/product/product.php
+CODE: $data['footer'] =
+LINE: 501
+LINE: 594
+
+FILE: catalog/controller/product/category.php
+CODE: $data['footer'] =
+LINE: 439
+LINE: 490
+
+FILE: catalog/controller/product/search.php
+CODE: $data['footer'] =
+LINE: 455
+
+FILE: (sub modification) catalog/controller/checkout/cart.php
+CODE: $data['footer'] =
+LINE: 249
+LINE: 269
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: $data['footer'] =
+LINE: 95
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $this->load->view
+LINE: 420
+
+FILE: (sub modification) catalog/controller/checkout/success.php
+CODE: function index
+LINE: 7
+CODE: $data['footer'] =
+LINE: 115
+
+FILE: catalog/controller/account/login.php
+CODE: $data['footer'] =
+LINE: 155
+
+FILE: catalog/controller/account/success.php
+CODE: $data['text_message'] =
+LINE: 29
+LINE: 35
+
+FILE: catalog/controller/information/contact.php
+CODE: $data['footer'] =
+LINE: 141
+LINE: 201
+----------------------------------------------------------------
+2023-09-20 13:28:14 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 13
+----------------------------------------------------------------
+MOD: BestPrice 360 Analytics
+
+FILE: catalog/model/checkout/order.php
+CODE: public function getOrder($order_id) {
+LINE: 210
+
+FILE: catalog/controller/checkout/success.php
+CODE: public function index() {
+LINE: 53
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 27
+----------------------------------------------------------------
+MOD: Cashback By Webtuning Technology
+----------------------------------------------------------------
+MOD: Export/Import Tool (V4.13) for OpenCart 3.x
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/upload')) {
+LINE: 609
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_backup']
+LINE: 8
+----------------------------------------------------------------
+MOD: Installer Fix Allow All directories
+
+FILE: admin/controller/marketplace/install.php
+CODE: if ($safe) {
+LINE: 165
+CODE: if (is_dir($file) && !is_dir($path)) {
+LINE: 226
+----------------------------------------------------------------
+MOD: Recently Viewed
+
+FILE: catalog/controller/product/product.php
+CODE: if ($product_info) {
+LINE: 204
+----------------------------------------------------------------
+MOD: |OCT| Facebook Conversion API + Facebook Pixel + Dynamic Ads
+
+FILE: admin/controller/setting/setting.php
+CODE: $data['countries'] =
+LINE: 316
+
+FILE: admin/controller/setting/store.php
+CODE: $data['countries'] =
+LINE: 457
+
+FILE: admin/view/template/setting/setting.twig
+CODE: id="tab-option"
+LINE: 306
+
+FILE: admin/view/template/setting/store_form.twig
+CODE: id="tab-option"
+LINE: 257
+
+FILE: admin/view/template/setting/store_list.twig
+CODE: id="tab-option"
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/controller/common/header.php
+CODE: $data['google_analytics'] =
+NOT FOUND - OPERATION SKIPPED!
+CODE: $data['analytics'] = array();
+LINE: 10
+
+FILE: catalog/controller/checkout/cart.php
+CODE: $json['total'] =
+LINE: 383
+CODE: $json['total'] =
+LINE: 486
+
+FILE: catalog/controller/account/wishlist.php
+CODE: $json['success'] = sprintf($this->language->get('text_success')
+LINE: 152
+
+FILE: (sub modification) catalog/controller/product/product.php
+CODE: $data['footer'] =
+LINE: 501
+LINE: 594
+
+FILE: catalog/controller/product/category.php
+CODE: $data['footer'] =
+LINE: 439
+LINE: 490
+
+FILE: catalog/controller/product/search.php
+CODE: $data['footer'] =
+LINE: 455
+
+FILE: (sub modification) catalog/controller/checkout/cart.php
+CODE: $data['footer'] =
+LINE: 249
+LINE: 269
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: $data['footer'] =
+LINE: 95
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $this->load->view
+LINE: 420
+
+FILE: (sub modification) catalog/controller/checkout/success.php
+CODE: function index
+LINE: 7
+CODE: $data['footer'] =
+LINE: 115
+
+FILE: catalog/controller/account/login.php
+CODE: $data['footer'] =
+LINE: 155
+
+FILE: catalog/controller/account/success.php
+CODE: $data['text_message'] =
+LINE: 29
+LINE: 35
+
+FILE: catalog/controller/information/contact.php
+CODE: $data['footer'] =
+LINE: 141
+LINE: 201
+----------------------------------------------------------------
+2023-09-25 11:05:04 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 13
+----------------------------------------------------------------
+MOD: BestPrice 360 Analytics
+
+FILE: catalog/model/checkout/order.php
+CODE: public function getOrder($order_id) {
+LINE: 210
+
+FILE: catalog/controller/checkout/success.php
+CODE: public function index() {
+LINE: 53
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 27
+----------------------------------------------------------------
+MOD: Cashback By Webtuning Technology
+----------------------------------------------------------------
+MOD: Export/Import Tool (V4.13) for OpenCart 3.x
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/upload')) {
+LINE: 609
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_backup']
+LINE: 8
+----------------------------------------------------------------
+MOD: Installer Fix Allow All directories
+
+FILE: admin/controller/marketplace/install.php
+CODE: if ($safe) {
+LINE: 165
+CODE: if (is_dir($file) && !is_dir($path)) {
+LINE: 226
+----------------------------------------------------------------
+MOD: Recently Viewed
+
+FILE: catalog/controller/product/product.php
+CODE: if ($product_info) {
+LINE: 204
+----------------------------------------------------------------
+MOD: |OCT| Facebook Conversion API + Facebook Pixel + Dynamic Ads
+
+FILE: admin/controller/setting/setting.php
+CODE: $data['countries'] =
+LINE: 316
+
+FILE: admin/controller/setting/store.php
+CODE: $data['countries'] =
+LINE: 457
+
+FILE: admin/view/template/setting/setting.twig
+CODE: id="tab-option"
+LINE: 306
+
+FILE: admin/view/template/setting/store_form.twig
+CODE: id="tab-option"
+LINE: 257
+
+FILE: admin/view/template/setting/store_list.twig
+CODE: id="tab-option"
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/controller/common/header.php
+CODE: $data['google_analytics'] =
+NOT FOUND - OPERATION SKIPPED!
+CODE: $data['analytics'] = array();
+LINE: 10
+
+FILE: catalog/controller/checkout/cart.php
+CODE: $json['total'] =
+LINE: 383
+CODE: $json['total'] =
+LINE: 486
+
+FILE: catalog/controller/account/wishlist.php
+CODE: $json['success'] = sprintf($this->language->get('text_success')
+LINE: 152
+
+FILE: (sub modification) catalog/controller/product/product.php
+CODE: $data['footer'] =
+LINE: 501
+LINE: 594
+
+FILE: catalog/controller/product/category.php
+CODE: $data['footer'] =
+LINE: 439
+LINE: 490
+
+FILE: catalog/controller/product/search.php
+CODE: $data['footer'] =
+LINE: 455
+
+FILE: (sub modification) catalog/controller/checkout/cart.php
+CODE: $data['footer'] =
+LINE: 249
+LINE: 269
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: $data['footer'] =
+LINE: 95
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $this->load->view
+LINE: 420
+
+FILE: (sub modification) catalog/controller/checkout/success.php
+CODE: function index
+LINE: 7
+CODE: $data['footer'] =
+LINE: 115
+
+FILE: catalog/controller/account/login.php
+CODE: $data['footer'] =
+LINE: 155
+
+FILE: catalog/controller/account/success.php
+CODE: $data['text_message'] =
+LINE: 29
+LINE: 35
+
+FILE: catalog/controller/information/contact.php
+CODE: $data['footer'] =
+LINE: 141
+LINE: 201
+----------------------------------------------------------------
+2023-09-29 13:43:38 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 13
+----------------------------------------------------------------
+MOD: BestPrice 360 Analytics
+
+FILE: catalog/model/checkout/order.php
+CODE: public function getOrder($order_id) {
+LINE: 210
+
+FILE: catalog/controller/checkout/success.php
+CODE: public function index() {
+LINE: 53
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 27
+----------------------------------------------------------------
+MOD: Cashback By Webtuning Technology
+----------------------------------------------------------------
+MOD: Export/Import Tool (V4.13) for OpenCart 3.x
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/upload')) {
+LINE: 609
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_backup']
+LINE: 8
+----------------------------------------------------------------
+MOD: Installer Fix Allow All directories
+
+FILE: admin/controller/marketplace/install.php
+CODE: if ($safe) {
+LINE: 165
+CODE: if (is_dir($file) && !is_dir($path)) {
+LINE: 226
+----------------------------------------------------------------
+MOD: Recently Viewed
+
+FILE: catalog/controller/product/product.php
+CODE: if ($product_info) {
+LINE: 204
+----------------------------------------------------------------
+MOD: |OCT| Facebook Conversion API + Facebook Pixel + Dynamic Ads
+
+FILE: admin/controller/setting/setting.php
+CODE: $data['countries'] =
+LINE: 316
+
+FILE: admin/controller/setting/store.php
+CODE: $data['countries'] =
+LINE: 457
+
+FILE: admin/view/template/setting/setting.twig
+CODE: id="tab-option"
+LINE: 306
+
+FILE: admin/view/template/setting/store_form.twig
+CODE: id="tab-option"
+LINE: 257
+
+FILE: admin/view/template/setting/store_list.twig
+CODE: id="tab-option"
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/controller/common/header.php
+CODE: $data['google_analytics'] =
+NOT FOUND - OPERATION SKIPPED!
+CODE: $data['analytics'] = array();
+LINE: 10
+
+FILE: catalog/controller/checkout/cart.php
+CODE: $json['total'] =
+LINE: 383
+CODE: $json['total'] =
+LINE: 486
+
+FILE: catalog/controller/account/wishlist.php
+CODE: $json['success'] = sprintf($this->language->get('text_success')
+LINE: 152
+
+FILE: (sub modification) catalog/controller/product/product.php
+CODE: $data['footer'] =
+LINE: 501
+LINE: 594
+
+FILE: catalog/controller/product/category.php
+CODE: $data['footer'] =
+LINE: 439
+LINE: 490
+
+FILE: catalog/controller/product/search.php
+CODE: $data['footer'] =
+LINE: 455
+
+FILE: (sub modification) catalog/controller/checkout/cart.php
+CODE: $data['footer'] =
+LINE: 249
+LINE: 269
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: $data['footer'] =
+LINE: 95
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $this->load->view
+LINE: 420
+
+FILE: (sub modification) catalog/controller/checkout/success.php
+CODE: function index
+LINE: 7
+CODE: $data['footer'] =
+LINE: 115
+
+FILE: catalog/controller/account/login.php
+CODE: $data['footer'] =
+LINE: 155
+
+FILE: catalog/controller/account/success.php
+CODE: $data['text_message'] =
+LINE: 29
+LINE: 35
+
+FILE: catalog/controller/information/contact.php
+CODE: $data['footer'] =
+LINE: 141
+LINE: 201
+----------------------------------------------------------------
+2023-09-29 13:43:38 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 13
+----------------------------------------------------------------
+MOD: BestPrice 360 Analytics
+
+FILE: catalog/model/checkout/order.php
+CODE: public function getOrder($order_id) {
+LINE: 210
+
+FILE: catalog/controller/checkout/success.php
+CODE: public function index() {
+LINE: 53
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 27
+----------------------------------------------------------------
+MOD: Cashback By Webtuning Technology
+----------------------------------------------------------------
+MOD: Export/Import Tool (V4.13) for OpenCart 3.x
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/upload')) {
+LINE: 609
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_backup']
+LINE: 8
+----------------------------------------------------------------
+MOD: Installer Fix Allow All directories
+
+FILE: admin/controller/marketplace/install.php
+CODE: if ($safe) {
+LINE: 165
+CODE: if (is_dir($file) && !is_dir($path)) {
+LINE: 226
+----------------------------------------------------------------
+MOD: Recently Viewed
+
+FILE: catalog/controller/product/product.php
+CODE: if ($product_info) {
+LINE: 204
+----------------------------------------------------------------
+MOD: |OCT| Facebook Conversion API + Facebook Pixel + Dynamic Ads
+
+FILE: admin/controller/setting/setting.php
+CODE: $data['countries'] =
+LINE: 316
+
+FILE: admin/controller/setting/store.php
+CODE: $data['countries'] =
+LINE: 457
+
+FILE: admin/view/template/setting/setting.twig
+CODE: id="tab-option"
+LINE: 306
+
+FILE: admin/view/template/setting/store_form.twig
+CODE: id="tab-option"
+LINE: 257
+
+FILE: admin/view/template/setting/store_list.twig
+CODE: id="tab-option"
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/controller/common/header.php
+CODE: $data['google_analytics'] =
+NOT FOUND - OPERATION SKIPPED!
+CODE: $data['analytics'] = array();
+LINE: 10
+
+FILE: catalog/controller/checkout/cart.php
+CODE: $json['total'] =
+LINE: 383
+CODE: $json['total'] =
+LINE: 486
+
+FILE: catalog/controller/account/wishlist.php
+CODE: $json['success'] = sprintf($this->language->get('text_success')
+LINE: 152
+
+FILE: (sub modification) catalog/controller/product/product.php
+CODE: $data['footer'] =
+LINE: 501
+LINE: 594
+
+FILE: catalog/controller/product/category.php
+CODE: $data['footer'] =
+LINE: 439
+LINE: 490
+
+FILE: catalog/controller/product/search.php
+CODE: $data['footer'] =
+LINE: 455
+
+FILE: (sub modification) catalog/controller/checkout/cart.php
+CODE: $data['footer'] =
+LINE: 249
+LINE: 269
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: $data['footer'] =
+LINE: 95
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $this->load->view
+LINE: 420
+
+FILE: (sub modification) catalog/controller/checkout/success.php
+CODE: function index
+LINE: 7
+CODE: $data['footer'] =
+LINE: 115
+
+FILE: catalog/controller/account/login.php
+CODE: $data['footer'] =
+LINE: 155
+
+FILE: catalog/controller/account/success.php
+CODE: $data['text_message'] =
+LINE: 29
+LINE: 35
+
+FILE: catalog/controller/information/contact.php
+CODE: $data['footer'] =
+LINE: 141
+LINE: 201
+----------------------------------------------------------------
+2023-09-29 13:43:39 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 13
+----------------------------------------------------------------
+MOD: BestPrice 360 Analytics
+
+FILE: catalog/model/checkout/order.php
+CODE: public function getOrder($order_id) {
+LINE: 210
+
+FILE: catalog/controller/checkout/success.php
+CODE: public function index() {
+LINE: 53
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 27
+----------------------------------------------------------------
+MOD: Cashback By Webtuning Technology
+----------------------------------------------------------------
+MOD: Export/Import Tool (V4.13) for OpenCart 3.x
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/upload')) {
+LINE: 609
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_backup']
+LINE: 8
+----------------------------------------------------------------
+MOD: Installer Fix Allow All directories
+
+FILE: admin/controller/marketplace/install.php
+CODE: if ($safe) {
+LINE: 165
+CODE: if (is_dir($file) && !is_dir($path)) {
+LINE: 226
+----------------------------------------------------------------
+MOD: Recently Viewed
+
+FILE: catalog/controller/product/product.php
+CODE: if ($product_info) {
+LINE: 204
+----------------------------------------------------------------
+MOD: |OCT| Facebook Conversion API + Facebook Pixel + Dynamic Ads
+
+FILE: admin/controller/setting/setting.php
+CODE: $data['countries'] =
+LINE: 316
+
+FILE: admin/controller/setting/store.php
+CODE: $data['countries'] =
+LINE: 457
+
+FILE: admin/view/template/setting/setting.twig
+CODE: id="tab-option"
+LINE: 306
+
+FILE: admin/view/template/setting/store_form.twig
+CODE: id="tab-option"
+LINE: 257
+
+FILE: admin/view/template/setting/store_list.twig
+CODE: id="tab-option"
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/controller/common/header.php
+CODE: $data['google_analytics'] =
+NOT FOUND - OPERATION SKIPPED!
+CODE: $data['analytics'] = array();
+LINE: 10
+
+FILE: catalog/controller/checkout/cart.php
+CODE: $json['total'] =
+LINE: 383
+CODE: $json['total'] =
+LINE: 486
+
+FILE: catalog/controller/account/wishlist.php
+CODE: $json['success'] = sprintf($this->language->get('text_success')
+LINE: 152
+
+FILE: (sub modification) catalog/controller/product/product.php
+CODE: $data['footer'] =
+LINE: 501
+LINE: 594
+
+FILE: catalog/controller/product/category.php
+CODE: $data['footer'] =
+LINE: 439
+LINE: 490
+
+FILE: catalog/controller/product/search.php
+CODE: $data['footer'] =
+LINE: 455
+
+FILE: (sub modification) catalog/controller/checkout/cart.php
+CODE: $data['footer'] =
+LINE: 249
+LINE: 269
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: $data['footer'] =
+LINE: 95
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $this->load->view
+LINE: 420
+
+FILE: (sub modification) catalog/controller/checkout/success.php
+CODE: function index
+LINE: 7
+CODE: $data['footer'] =
+LINE: 115
+
+FILE: catalog/controller/account/login.php
+CODE: $data['footer'] =
+LINE: 155
+
+FILE: catalog/controller/account/success.php
+CODE: $data['text_message'] =
+LINE: 29
+LINE: 35
+
+FILE: catalog/controller/information/contact.php
+CODE: $data['footer'] =
+LINE: 141
+LINE: 201
+----------------------------------------------------------------
+2023-10-02 11:48:32 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 13
+----------------------------------------------------------------
+MOD: ElFinder Image Manager 3.0
+
+FILE: admin/model/tool/image.php
+CODE: if (!in_array($image_type, array(IMAGETYPE_PNG, IMAGETYPE_JPEG, IMAGETYPE_GIF))) {
+LINE: 15
+
+FILE: catalog/model/tool/image.php
+CODE: if (!in_array($image_type, array(IMAGETYPE_PNG, IMAGETYPE_JPEG, IMAGETYPE_GIF))) {
+LINE: 15
+LINE: 61
+
+FILE: admin/view/template/common/header.twig
+CODE: <script type="text/javascript" src="view/javascript/jquery/jquery-2.1.1.min.js"></script>
+LINE: 19
+CODE: <script src="view/javascript/common.js" type="text/javascript"></script>
+LINE: 34
+
+FILE: admin/view/template/extension/module/html.twig
+CODE: <script type="text/javascript" src="view/javascript/summernote/opencart.js"></script>
+LINE: 88
+
+FILE: admin/view/template/marketing/contact.twig
+CODE: <script type="text/javascript" src="view/javascript/summernote/opencart.js"></script>
+LINE: 102
+
+FILE: admin/view/template/catalog/category_form.twig
+CODE: <script type="text/javascript" src="view/javascript/summernote/opencart.js"></script>
+LINE: 247
+
+FILE: admin/view/template/catalog/information_form.twig
+CODE: <script type="text/javascript" src="view/javascript/summernote/opencart.js"></script>
+LINE: 203
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: <script type="text/javascript" src="view/javascript/summernote/opencart.js"></script>
+LINE: 1125
+
+FILE: admin/view/template/catalog/option_form.twig
+CODE: <script type="text/javascript"><!--
+LINE: 155
+
+FILE: (sub modification) admin/view/template/catalog/product_form.twig
+CODE: <script type="text/javascript"><!--
+LINE: 1131
+
+FILE: (sub modification) admin/view/template/catalog/option_form.twig
+CODE: <td class="text-right"><button type="button" onclick="addOptionValue();" data-toggle="tooltip" title="{{ button_option_value_add }}" class="btn btn-primary"><i class="fa fa-plus-circle"></i></button></td>
+LINE: 143
+CODE: html += '  <td class="text-left"><input type="hidden" name="option_value[' + option_value_row + '][option_value_id]" value="" />';
+LINE: 170
+CODE: html += '  <td class="text-center"><a href="" id="thumb-image' + option_value_row + '" data-toggle="image" class="img-thumbnail"><img src="{{ placeholder }}" alt="" title="" data-placeholder="{{ placeholder }}" /></a><input type="hidden" name="option_value[' + option_value_row + '][image]" value="" id="input-image' + option_value_row + '" /></td>';
+LINE: 179
+CODE: onclick="$('#option-value-row{{ option_value_row }}').remove();" data-toggle="tooltip"
+LINE: 134
+
+FILE: (sub modification) admin/view/template/catalog/product_form.twig
+CODE: <td class="text-left"><button type="button" onclick="addImage();" data-toggle="tooltip" title="{{ button_image_add }}" class="btn btn-primary"><i class="fa fa-plus-circle"></i></button></td>
+LINE: 1009
+CODE: onclick="$('#image-row{{ image_row }}').remove();" data-toggle="tooltip"
+LINE: 1000
+
+FILE: admin/view/template/design/banner_form.twig
+CODE: <td class="text-left"><button type="button" onclick="addImage('{{ language.language_id }}');" data-toggle="tooltip" title="{{ button_banner_add }}" class="btn btn-primary"><i class="fa fa-plus-circle"></i></button></td>
+LINE: 91
+CODE: onclick="$('#image-row{{ image_row }}, .tooltip').remove();" data-toggle="tooltip"
+LINE: 82
+CODE: <script type="text/javascript"><!--
+LINE: 109
+
+FILE: (sub modification) admin/view/template/common/header.twig
+CODE: <head>
+LINE: 3
+----------------------------------------------------------------
+MOD: BestPrice 360 Analytics
+
+FILE: catalog/model/checkout/order.php
+CODE: public function getOrder($order_id) {
+LINE: 210
+
+FILE: catalog/controller/checkout/success.php
+CODE: public function index() {
+LINE: 53
+
+FILE: catalog/view/theme/default/template/common/success.twig
+CODE: {{ footer }}
+LINE: 27
+----------------------------------------------------------------
+MOD: Cashback By Webtuning Technology
+----------------------------------------------------------------
+MOD: Export/Import Tool (V4.13) for OpenCart 3.x
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/upload')) {
+LINE: 609
+
+FILE: admin/language/en-gb/common/column_left.php
+CODE: $_['text_backup']
+LINE: 8
+----------------------------------------------------------------
+MOD: Installer Fix Allow All directories
+
+FILE: admin/controller/marketplace/install.php
+CODE: if ($safe) {
+LINE: 165
+CODE: if (is_dir($file) && !is_dir($path)) {
+LINE: 226
+----------------------------------------------------------------
+MOD: Recently Viewed
+
+FILE: catalog/controller/product/product.php
+CODE: if ($product_info) {
+LINE: 204
+----------------------------------------------------------------
+MOD: |OCT| Facebook Conversion API + Facebook Pixel + Dynamic Ads
+
+FILE: admin/controller/setting/setting.php
+CODE: $data['countries'] =
+LINE: 316
+
+FILE: admin/controller/setting/store.php
+CODE: $data['countries'] =
+LINE: 457
+
+FILE: admin/view/template/setting/setting.twig
+CODE: id="tab-option"
+LINE: 306
+
+FILE: admin/view/template/setting/store_form.twig
+CODE: id="tab-option"
+LINE: 257
+
+FILE: admin/view/template/setting/store_list.twig
+CODE: id="tab-option"
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/controller/common/header.php
+CODE: $data['google_analytics'] =
+NOT FOUND - OPERATION SKIPPED!
+CODE: $data['analytics'] = array();
+LINE: 10
+
+FILE: catalog/controller/checkout/cart.php
+CODE: $json['total'] =
+LINE: 383
+CODE: $json['total'] =
+LINE: 486
+
+FILE: catalog/controller/account/wishlist.php
+CODE: $json['success'] = sprintf($this->language->get('text_success')
+LINE: 152
+
+FILE: (sub modification) catalog/controller/product/product.php
+CODE: $data['footer'] =
+LINE: 501
+LINE: 594
+
+FILE: catalog/controller/product/category.php
+CODE: $data['footer'] =
+LINE: 439
+LINE: 490
+
+FILE: catalog/controller/product/search.php
+CODE: $data['footer'] =
+LINE: 455
+
+FILE: (sub modification) catalog/controller/checkout/cart.php
+CODE: $data['footer'] =
+LINE: 249
+LINE: 269
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: $data['footer'] =
+LINE: 95
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $this->load->view
+LINE: 420
+
+FILE: (sub modification) catalog/controller/checkout/success.php
+CODE: function index
+LINE: 7
+CODE: $data['footer'] =
+LINE: 115
+
+FILE: catalog/controller/account/login.php
+CODE: $data['footer'] =
+LINE: 155
+
+FILE: catalog/controller/account/success.php
+CODE: $data['text_message'] =
+LINE: 29
+LINE: 35
+
+FILE: catalog/controller/information/contact.php
+CODE: $data['footer'] =
+LINE: 141
+LINE: 201
+----------------------------------------------------------------
